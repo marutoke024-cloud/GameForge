@@ -1,0 +1,17 @@
+{
+  "name": "GameForge",
+  "short_name": "GameForge",
+  "description": "同人ゲーム制作の計画・設定・シナリオ・素材を一元管理",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f5f6f7",
+  "theme_color": "#49a96f",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
