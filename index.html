@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#2b46ef">
+<meta name="theme-color" content="#49a96f">
 <!-- Fonts: Anton(EN Display) / Space Grotesk(EN UI) / Zen Kaku Gothic New(JP) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1182,8 +1182,8 @@
   /* Brand shell (theme非依存) */
   --gf-paper:#f4f2ec;
   --gf-ink:#181a24;
-  --gf-blue:#2b46ef;
-  --gf-blue-deep:#1d33c4;
+  --gf-blue:#49a96f; /* brand main = GameForge green */
+  --gf-blue-deep:#35854f;
   --gf-coral:#ff4263;
   --gf-sun:#ffc832;
   --gf-hard:4px 4px 0 var(--gf-ink);
@@ -1197,9 +1197,9 @@
   --danger:#e8344f;
   --radius:6px;
   --shadow:0 1px 2px rgba(24,26,36,.06);
-  /* default theme "forest" → vivid emerald */
-  --green-700:#0b6e49; --green-600:#0a9159; --green-500:#0bb56e;
-  --green-400:#4ecf99; --green-100:#d9f4e7; --green-50:#eefaf4;
+  /* default theme "forest" = brand green */
+  --green-700:#2e7a4e; --green-600:#3c9560; --green-500:#49a96f;
+  --green-400:#82c5a0; --green-100:#ddf0e5; --green-50:#f0f8f4;
 }
 body[data-theme="abyss"]{
   --green-700:#1727a3; --green-600:#1d33c4; --green-500:#2b46ef;
@@ -1217,7 +1217,7 @@ body[data-theme="honey"]{
   --green-700:#a26d00; --green-600:#cf8c00; --green-500:#f5a300;
   --green-400:#f8c14d; --green-100:#fdefd2; --green-50:#fef8ea; --bg:var(--gf-paper);
 }
-.theme-sw[data-theme="forest"]{background:#0bb56e;}
+.theme-sw[data-theme="forest"]{background:#49a96f;}
 .theme-sw[data-theme="abyss"]{background:#2b46ef;}
 .theme-sw[data-theme="crimson"]{background:#f43f5e;}
 .theme-sw[data-theme="coffee"]{background:#f97316;}
@@ -1227,7 +1227,7 @@ body[data-theme="honey"]{
 body{
   font-family:"Space Grotesk","Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
   background:
-    radial-gradient(720px 420px at 88% -6%, rgba(43,70,239,.10), transparent 64%),
+    radial-gradient(720px 420px at 88% -6%, rgba(73,169,111,.13), transparent 64%),
     radial-gradient(640px 420px at -8% 26%, rgba(255,66,99,.09), transparent 60%),
     radial-gradient(560px 400px at 70% 108%, rgba(255,200,50,.14), transparent 62%),
     var(--gf-paper);
@@ -1380,23 +1380,23 @@ body::before{ /* halftone dots */
 .breadcrumb a{color:var(--gf-blue);}
 
 /* ===== HOME hero ===== */
-.gf-hero{padding:34px 0 10px;position:relative;}
+.gf-hero{padding:16px 0 6px;position:relative;}
 .gf-hero-overline{
   display:inline-flex;align-items:center;gap:10px;
   font-size:11px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--gf-ink);
   border:2px solid var(--gf-ink);background:var(--gf-sun);
   padding:5px 14px;border-radius:4px;transform:skewX(-8deg);
-  box-shadow:var(--gf-hard-sm);margin-bottom:22px;
+  box-shadow:var(--gf-hard-sm);margin-bottom:14px;
 }
 .gf-hero-title{
   font-family:"Anton",sans-serif;font-weight:400;margin:0;
-  font-size:clamp(48px,8.6vw,124px);line-height:.96;letter-spacing:.005em;
+  font-size:clamp(28px,5.6vw,76px);line-height:1;letter-spacing:.005em;
   color:var(--gf-ink);text-transform:uppercase;
 }
 .gf-hero-title .ht-line{display:block;transform:skewX(-4deg);}
 .gf-hero-title i{font-style:normal;color:var(--gf-blue);}
 .gf-hero-title em{
-  font-style:normal;color:transparent;-webkit-text-stroke:2.5px var(--gf-ink);
+  font-style:normal;color:transparent;-webkit-text-stroke:2px var(--gf-ink);
 }
 .gf-hero-title b{font-weight:400;position:relative;}
 .gf-hero-title b::after{
@@ -1410,13 +1410,13 @@ body::before{ /* halftone dots */
 }
 @keyframes gfSpin{to{transform:rotate(360deg);}}
 .gf-hero-sub{
-  font-size:14.5px;font-weight:700;color:var(--text-sub);margin:18px 0 26px;letter-spacing:.04em;
+  font-size:14.5px;font-weight:700;color:var(--text-sub);margin:12px 0 18px;letter-spacing:.04em;
 }
 .gf-hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
 
 /* marquee */
 .gf-marquee{
-  margin:38px calc(clamp(20px,4vw,64px) * -1) 30px;
+  margin:24px calc(clamp(20px,4vw,64px) * -1) 22px;
   background:var(--gf-ink);border-top:2px solid var(--gf-ink);border-bottom:2px solid var(--gf-ink);
   overflow:hidden;transform:rotate(-1.1deg) scale(1.02);
   padding:9px 0;position:relative;z-index:1;
@@ -1575,20 +1575,9 @@ body::before{ /* halftone dots */
 .scn-scenes-head{border-bottom:1.5px solid var(--gf-ink);letter-spacing:.06em;}
 .blk-scene .scene-band{background:linear-gradient(90deg,var(--green-500) 0 70%, var(--gf-sun) 70% 86%, var(--gf-coral) 86%);}
 
-/* ===== Page wipe transition layers ===== */
-.gf-wipe{position:fixed;inset:0;z-index:200;pointer-events:none;overflow:hidden;}
-.gf-wipe i{
-  position:absolute;top:-12%;bottom:-12%;left:-26%;right:-26%;
-  transform:translateX(-130%) skewX(-14deg);will-change:transform;
-}
-.gf-wipe .w1{background:var(--gf-sun);}
-.gf-wipe .w2{background:var(--gf-coral);}
-.gf-wipe .w3{background:var(--gf-blue);}
-.gf-wipe .w-label{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) skewX(-8deg);
-  font-family:"Anton",sans-serif;font-size:clamp(38px,7vw,84px);color:#fff;
-  letter-spacing:.04em;opacity:0;white-space:nowrap;text-transform:uppercase;
-}
+/* ===== Notebook tabs: モバイルで縦書き化しないよう折返し ===== */
+.tabs{flex-wrap:wrap;row-gap:4px;}
+.tabs .tab{white-space:nowrap;}
 
 /* page base animation off (GSAPに委譲。GSAP不在時はfadeのまま) */
 .gf-gsap .page.active{animation:none;}
@@ -1604,12 +1593,6 @@ body::before{ /* halftone dots */
 
 <!-- 3D background (Three.js) -->
 <canvas id="gf3d" aria-hidden="true"></canvas>
-<!-- Persona-style page wipe -->
-<div class="gf-wipe" id="gf-wipe" aria-hidden="true">
-  <i class="w1"></i><i class="w2"></i><i class="w3"></i>
-  <span class="w-label" id="gf-wipe-label"></span>
-</div>
-
 <header class="app-header">
   <button class="nav-toggle" id="nav-toggle" title="メニュー" aria-label="メニュー">☰</button>
   <div class="logo" id="app-logo" title="プロジェクト一覧へ戻る" style="cursor:pointer;">
@@ -1652,8 +1635,7 @@ body::before{ /* halftone dots */
     <div class="gf-hero">
       <div class="gf-hero-overline">★ Doujin Game Production Suite</div>
       <h1 class="gf-hero-title" aria-label="FORGE YOUR GAME">
-        <span class="ht-line"><i>FORGE</i>&nbsp;<em>YOUR</em></span>
-        <span class="ht-line"><b>GAME</b><s class="ht-star">★</s></span>
+        <span class="ht-line"><i>FORGE</i>&nbsp;<em>YOUR</em>&nbsp;<b>GAME</b><s class="ht-star">★</s></span>
       </h1>
       <div class="gf-hero-sub">同人ゲーム制作の計画・設定・シナリオ・素材を、ひとつの場所で。</div>
       <div class="gf-hero-actions">
@@ -5805,16 +5787,6 @@ window.addEventListener('DOMContentLoaded', init);
   if(reduced) return;
   document.documentElement.classList.add('gf-gsap');
 
-  var PAGE_EN = {
-    'page-home':'HOME', 'page-milestone':'MILESTONE', 'page-planning':'PLANNING',
-    'page-world':'WORLD', 'page-chara':'CHARACTER', 'page-system':'SYSTEM',
-    'page-structure':'STRUCTURE', 'page-scenario':'SCENARIO', 'page-assets':'ASSETS',
-    'page-glossary':'GLOSSARY', 'page-notebook':'IDEA NOTES'
-  };
-  var panels = document.querySelectorAll('#gf-wipe i');
-  var wipeLabel = document.getElementById('gf-wipe-label');
-  gsap.set(panels, { xPercent:-130, skewX:-14 });
-
   /* ---- ページ入場スタッガー（hidden時はrAFが止まるためスキップ） ---- */
   function animatePageIn(id){
     if(document.hidden) return;
@@ -5822,31 +5794,30 @@ window.addEventListener('DOMContentLoaded', init);
     if(!page) return;
     var kids = Array.prototype.slice.call(page.children, 0, 12);
     gsap.fromTo(kids,
-      { y:26, autoAlpha:0 },
-      { y:0, autoAlpha:1, duration:.55, stagger:.05, ease:'power3.out',
+      { y:14, autoAlpha:0 },
+      { y:0, autoAlpha:1, duration:.4, stagger:.04, ease:'power2.out',
         clearProps:'transform,opacity,visibility' });
   }
 
-  /* ---- showPage を Persona 風ワイプでラップ ---- */
-  var ready = false, wiping = false;
+  /* ---- showPage を穏やかなクロスフェードでラップ ---- */
+  var ready = false, switching = false;
   window.addEventListener('load', function(){ setTimeout(function(){ ready = true; }, 350); });
   var origShowPage = window.showPage;
   window.showPage = function(id){
-    if(!ready || wiping || document.hidden || document.getElementById(id).classList.contains('active')){
+    var current = document.querySelector('.page.active');
+    if(!ready || switching || document.hidden || !current ||
+       document.getElementById(id).classList.contains('active')){
       origShowPage(id);
-      if(ready && !wiping) animatePageIn(id);
+      if(ready && !switching) animatePageIn(id);
       return;
     }
-    wiping = true;
-    wipeLabel.textContent = PAGE_EN[id] || '';
-    gsap.set(panels, { xPercent:-130, skewX:-14 });
-    var tl = gsap.timeline({ onComplete:function(){ wiping = false; gsap.set(panels, { xPercent:-130 }); } });
-    tl.to(panels, { xPercent:0, duration:.32, stagger:.07, ease:'power4.in' })
-      .fromTo(wipeLabel, { autoAlpha:0, x:60, skewX:-8 }, { autoAlpha:1, x:0, duration:.22, ease:'power3.out' }, '-=.10')
-      .add(function(){ origShowPage(id); })
-      .to(wipeLabel, { autoAlpha:0, x:-60, duration:.2, ease:'power3.in' }, '+=.12')
-      .to(panels, { xPercent:130, duration:.38, stagger:.07, ease:'power4.out' }, '-=.08')
-      .add(function(){ animatePageIn(id); }, '-=.30');
+    switching = true;
+    gsap.to(current, { autoAlpha:0, y:-8, duration:.16, ease:'power2.in', onComplete:function(){
+      gsap.set(current, { clearProps:'opacity,visibility,transform' });
+      origShowPage(id);
+      switching = false;
+      animatePageIn(id);
+    }});
   };
 
   /* ---- 初回ロード：ヒーローイントロ（hidden時は表示時まで遅延） ---- */
@@ -5898,10 +5869,10 @@ try{
 
   scene.add(new THREE.HemisphereLight(0xffffff, 0xe8e2d2, 1.05));
   const dir = new THREE.DirectionalLight(0xffffff, 1.15); dir.position.set(6, 10, 8); scene.add(dir);
-  const pt = new THREE.PointLight(0x2b46ef, 22, 40); pt.position.set(-9, -5, 5); scene.add(pt);
+  const pt = new THREE.PointLight(0x49a96f, 22, 40); pt.position.set(-9, -5, 5); scene.add(pt);
 
   const group = new THREE.Group(); scene.add(group);
-  const COLORS = [0x2b46ef, 0xff4263, 0xffc832, 0xffffff, 0x2b46ef, 0xff4263];
+  const COLORS = [0x49a96f, 0xff4263, 0xffc832, 0xffffff, 0x49a96f, 0xff4263];
   const GEOS = [
     () => new THREE.IcosahedronGeometry(1, 0),
     () => new THREE.OctahedronGeometry(1, 0),
@@ -5936,7 +5907,7 @@ try{
   wire.position.set(11, 3.5, -6); group.add(wire);
   const wire2 = new THREE.Mesh(
     new THREE.IcosahedronGeometry(3.4, 0),
-    new THREE.MeshBasicMaterial({ color: 0x2b46ef, wireframe: true, transparent: true, opacity: .18 })
+    new THREE.MeshBasicMaterial({ color: 0x49a96f, wireframe: true, transparent: true, opacity: .18 })
   );
   wire2.position.set(-12, -4.5, -5); group.add(wire2);
 
